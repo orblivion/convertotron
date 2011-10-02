@@ -1,0 +1,19 @@
+{
+    (WAV, MP3):
+    [
+        {
+         "program":"mencoder"
+         "arguments": ["$(in_file)", "$(out_file)"]
+         "switches": ["", ""]
+         "sanity": 0.9 # how likely does the user mean this sort of conversion
+         "quality": 0. # the general quality of the conversion
+         "details": "Converts WAV to MP3"
+        },
+        {
+         "program": "ffmpeg"
+         ...
+        }
+    ],
+    (WAV, MP4):
+    ...
+}
