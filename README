@@ -20,6 +20,7 @@ vlc
 pandoc
 imagemagick
 Ubunt quickly for GUIs
+pdf2html - > output format*s*. drat.
 
 
 
@@ -38,3 +39,7 @@ http://gstreamer.freedesktop.org/data/doc/gstreamer/head/manual/html/section-int
 
 # Table
 Don't just have individual entries.  Many cases, the input params are independent of output params.
+
+
+Use cases
+Detected PDF. Now what?
