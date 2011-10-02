@@ -1,0 +1,36 @@
+core architecture
+
+Package Kit
+Basic GUI
+Contribution list
+
+video -> text take out captions?
+video -> gif?
+
+
+
+"show details" show the CLI command
+
+
+# conversion utils
+miro video converter. see what they're doing?
+"freevo" ? like MythTv
+mplayer/mencoder/ffmpeg/ffmpeg2theora
+vlc
+pandoc
+imagemagick
+Ubunt quickly for GUIs
+
+
+
+# settings
+free/nonfree
+convert in what sense?      video to ascii picures or extract subtitles
+please don't install anything
+restrict to no quality loss
+
+
+gstreamer - sources and sinks
+http://gstreamer.freedesktop.org/data/doc/gstreamer/head/manual/html/section-intro-basics-bins.html
+
+# "I want to play this on Windows"
