@@ -34,3 +34,7 @@ gstreamer - sources and sinks
 http://gstreamer.freedesktop.org/data/doc/gstreamer/head/manual/html/section-intro-basics-bins.html
 
 # "I want to play this on Windows"
+
+
+# Table
+Don't just have individual entries.  Many cases, the input params are independent of output params.
