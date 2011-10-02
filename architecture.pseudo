@@ -1,8 +1,8 @@
 
 def interaction(file,       output_formats = None, output_location = None, settings):
 
-    if output_location:       # Windows
-        output_formats = get_format(output_location, settings) # wmv
+    if output_location:       # "I want to play this on my iPod!" (cue from Miro)
+        output_formats = get_format(output_location, settings) # aac, etc
 
     # file first, then      imagemagick, gstreamer(?), ffmpeg/libavcodec
     input_format = identify(file)

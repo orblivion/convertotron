@@ -1,17 +1,18 @@
 import formats
+import subprocess
 
-def detect(fname):
+def identify(fname):
     return formats.FLAC
 
-def interaction(fname, output_formats = None, output_location = None, settings):
+def interaction(fname, output_formats = None, output_location = None, settings = None):
 
-#    if output_location:       # Windows
-#        output_formats = get_format(output_location, settings) # wmv
-#
+#    if output_location:       # "I want to play this on my iPod!" (cue from Miro)
+#        output_formats = get_format(output_location, settings) # aac, etc
+
 #    # file first, then      imagemagick, gstreamer(?), ffmpeg/libavcodec
-#    input_format = identify(file)
-#
-#
+    input_format = identify(fname)
+
+
 #    # research gstreamer    sources and sinks
 #    output_options   ::         [ (Program, Switches/Arguments, Warnings/Features Lost, Sanity Index, Description) ]
 #    # Description ex:        "This extracts your subtitles"
@@ -24,3 +25,7 @@ def interaction(fname, output_formats = None, output_location = None, settings):
 #    best = find_best (output_options)
 
 
+    conversion_method = formats.mapping[(input_format, formats.WAV)][0]
+    arguments = [arg % {"in_file": fname, "out_file": "bar.wav" } for arg in conversion_method["arguments"] ]
+    print arguments
+    subprocess.call([conversion_method['program']] + arguments) 
