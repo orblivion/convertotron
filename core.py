@@ -1,5 +1,5 @@
 from formats import Formats, mapping
-import subprocess
+import subprocess, sys
 from file_detect import FileDetect
 
 def find_best_method(output_options):
@@ -14,7 +14,12 @@ def convert(fname, output_fname, output_format = None, output_location = None, s
 
     detector = FileDetect(fname)
     input_format = detector.detect()
-    if input_format:
+    if not input_format:
+        # actually these should return error codes or something, this is a core function.
+        sys.stderr.write( "Input file format not detected.\n" )
+    if not output_format:
+        sys.stderr.write( "No (valid) output file formats specified.\n" )
+    else:
 
         #output_options = []
         #for of in output_formats:
@@ -29,6 +34,3 @@ def convert(fname, output_fname, output_format = None, output_location = None, s
 
         # Run it
         subprocess.call([best_method['program']] + arguments) 
-    else:
-        import sys
-        sys.err.write( "Input file format not detected." )
