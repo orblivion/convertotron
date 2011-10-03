@@ -1,10 +1,17 @@
 # "Constants" for file format descriptions, for the purpose of lookup in the table.
 
-WAV = "WAV"
-FLAC = "FLAC"
+# just a namespace. useful to group them together so we can say getattr(Formats, formatname)
+class Formats():
+
+    @classmethod
+    def get(cls, name):
+        return getattr(Formats, name, None)
+
+    WAV = "WAV"
+    FLAC = "FLAC"
 
 mapping = {
-    (FLAC, WAV):
+    (Formats.FLAC, Formats.WAV):
     [
         {
          "program":"flac",
