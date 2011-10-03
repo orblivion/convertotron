@@ -10,7 +10,10 @@ class Formats():
     WAV = "WAV"
     FLAC = "FLAC"
 
-mapping = {
+def mapping(input_format, output_format):
+    return basic_cli_mapping[(input_format, output_format)]
+
+basic_cli_mapping = {
     (Formats.FLAC, Formats.WAV):
     [
         {
@@ -22,3 +25,11 @@ mapping = {
         },
     ]
 }
+
+# Other Mappings:
+
+# Non-basic CLI mappings will include things like situations where we can specify options for
+# a set of input formats and options for a set of output formats, where we know the two are
+# completely independent
+
+# Library based mappings. Things that don't need a CLI because they're already mapped.

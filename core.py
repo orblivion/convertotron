@@ -26,7 +26,7 @@ def convert(fname, output_fname, output_format = None, output_location = None, s
         #    output_options.append(get_outputs(input_format, of, options))
 
 
-        conversion_methods = mapping[(input_format, output_format)]
+        conversion_methods = mapping(input_format, output_format)
         #map (check_installed,   output_options)
 
         best_method = find_best_method (conversion_methods)
